@@ -42,7 +42,7 @@ pipeline {
                 script {
                     python_script_cmd = "cd pyvmomi-community-samples/samples ; python3 get_vm_names.py -s ${HOST} -u ${USER} -p ${PASSWORD} -o 443 -nossl"
                     output = sh(script:"${python_script_cmd}", returnStdout: true).trim()
-                    print(output)
+                    print(output.split("\n")[0])
                     // Run the Python script
                 }
             }
