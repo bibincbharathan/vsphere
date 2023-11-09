@@ -43,5 +43,18 @@ pipeline {
                 }
             }
         }
+
+        stage('Run Script') {
+            steps {
+                script {
+                    // Run the Python script
+                    sh """
+                        cd pyvmomi-community-samples/samples
+                        python3 get_vm_names.py -s ${HOST} -u ${USER} -p ${PASSWORD} -o 443 -nossl
+                    
+                    """
+                }
+            }
+        }
     }
 }
