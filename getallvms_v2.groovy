@@ -19,7 +19,7 @@ pipeline {
                     sh '''
                         #git clone https://github.com/vmware/pyvmomi-community-samples
                         cd pyvmomi-community-samples/samples
-                        python3 getallvms.py -s ${HOST} -u ${USER} -p ${PASSWORD}
+                        python3 getallvms.py -s ${HOST} -u ${USER} -p ${PASSWORD} -o 443
                     '''
 
                     // Set the PATH to include the Anaconda3 Python path
@@ -37,7 +37,7 @@ pipeline {
                     // Run the Python script
                     sh """
                         cd pyvmomi-community-samples/samples
-                        python3 getallvms.py -s ${HOST} -u ${USER} -p ${PASSWORD}
+                        python3 getallvms.py -s ${HOST} -u ${USER} -p ${PASSWORD} -o 443
                     
                     """
                 }
