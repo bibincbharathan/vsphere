@@ -3,7 +3,7 @@ from pyVim.connect import SmartConnect
 import ssl
 
 c = ssl._create_unverified_context()
-si = SmartConnect(host='10.218.139.196', user='Administrator@vsphere.local', pwd='Artvm@123', sslContext=c)
+si = SmartConnect(host='10.187.96.82', user='Administrator@vsphere.local', pwd='Artvm@123', sslContext=c)
 
 vms=si.content.viewManager.CreateContainerView(si.content.rootFolder, [vim.VirtualMachine], True)
 
