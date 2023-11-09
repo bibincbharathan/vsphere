@@ -17,7 +17,7 @@ pipeline {
                     // Print current working directory
                     sh 'pwd'
                     sh '''
-                        git clone https://github.com/vmware/pyvmomi-community-samples
+                        #git clone https://github.com/vmware/pyvmomi-community-samples
                         cd pyvmomi-community-samples/samples
                         python3 getallvms.py -s “${HOST}” -u “${USER} -p “${PASSWORD}”
                     '''
