@@ -21,12 +21,6 @@ pipeline {
                         cd pyvmomi-community-samples/samples
                         python3 getallvms.py -s ${HOST} -u ${USER} -p ${PASSWORD} -o 443 -nossl
                     '''
-
-                    // Set the PATH to include the Anaconda3 Python path
-                    ENV['PATH'] = "${params.PYTHON_PATH}:${ENV['PATH']}"
-
-                    // Install the pyVmomi Python package using pip3
-                    sh 'pip3 install pyVmomi'
                 }
             }
         }
